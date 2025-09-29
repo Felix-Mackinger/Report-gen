@@ -1,0 +1,39 @@
+name: PDF Build
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup TeX Live
+        uses: xu-cheng/latex-action@v2
+        with:
+          packages: xelatex
+
+      - name: Install Pandoc
+        run: sudo apt-get install -y pandoc
+
+      - name: Build PDFs
+        run: |
+          for dir in docs/SYTD docs/ITSE docs/SYTI docs/MEDT docs/NWT; do
+            mkdir -p "$dir/PDF"
+            for f in "$dir"/*.md; do
+              [ -f "$f" ] || continue
+              filename=$(basename "$f" .md)
+              pandoc "$f" -o "$dir/PDF/$filename.pdf" --template=style.latex --pdf-engine=xelatex
+              echo "✅ Built PDF: $dir/PDF/$filename.pdf"
+            done
+          done
+
+      - name: Upload PDFs as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDFs
+          path: docs/**/PDF/*.pdf
