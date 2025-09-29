@@ -1,39 +1,32 @@
-name: PDF Build
+name: Build Arbeitsberichte PDF
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+    paths:
+      - 'docs/Fächer/Arbeitsberichte/**.md'
 
 jobs:
   build-pdf:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Repository auschecken
+        uses: actions/checkout@v3
 
-      - name: Setup TeX Live
-        uses: xu-cheng/latex-action@v2
-        with:
-          packages: xelatex
-
-      - name: Install Pandoc
-        run: sudo apt-get install -y pandoc
-
-      - name: Build PDFs
+      - name: PDF-Erstellung installieren
         run: |
-          for dir in docs/SYTD docs/ITSE docs/SYTI docs/MEDT docs/NWT; do
-            mkdir -p "$dir/PDF"
-            for f in "$dir"/*.md; do
-              [ -f "$f" ] || continue
-              filename=$(basename "$f" .md)
-              pandoc "$f" -o "$dir/PDF/$filename.pdf" --template=style.latex --pdf-engine=xelatex
-              echo "✅ Built PDF: $dir/PDF/$filename.pdf"
-            done
-          done
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-latex-base texlive-latex-extra texlive-fonts-recommended
 
-      - name: Upload PDFs as artifact
-        uses: actions/upload-artifact@v3
+      - name: PDF bauen
+        run: |
+          mkdir -p output
+          pandoc docs/Fächer/Arbeitsberichte/arbeitsberichte.md -o output/arbeitsberichte.pdf
+
+      - name: PDF auf OneDrive hochladen
+        uses: dawidd6/action-upload-to-onedrive@v3
         with:
-          name: PDFs
-          path: docs/**/PDF/*.pdf
+          folder-id: ${{ secrets.ONEDRIVE_FOLDER_ID }}
+          client-id: ${{ secrets.ONEDRIVE_CLIENT_ID }}
+          client-secret: ${{ secrets.ONEDRIVE_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.ONEDRIVE_REFRESH_TOKEN }}
+          source: output/arbeitsberichte.pdf
