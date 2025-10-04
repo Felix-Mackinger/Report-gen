@@ -4,7 +4,6 @@
 /* ===========================================================
    🎨 Farbvariablen & Theme
    =========================================================== */
-
 :root {
   --bg: #f0f2f5;
   --text: #1c1c1e;
@@ -54,7 +53,6 @@ body.dark {
 /* ===========================================================
    🧱 Grundlayout
    =========================================================== */
-
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg);
@@ -66,15 +64,29 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+/* ---------- HEADER ---------- */
 header {
   background: var(--header-gradient);
   color: var(--meta-text);
-  padding: 3rem 2rem 3rem 2rem;
+  padding: 3rem 2rem 4rem 2rem;
   border-radius: 16px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   text-align: center;
   position: relative;
 }
+
+/* Header Top Left/Right */
+.header-top-left,
+.header-top-right {
+  position: absolute;
+  top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.header-top-left { left: 2rem; }
+.header-top-right { right: 2rem; }
+.header-top-left:empty,
+.header-top-right:empty { display: none; }
 
 header h1 {
   margin: 0 0 1rem 0;
@@ -96,11 +108,13 @@ header h1 {
   line-height: 1.5;
   transition: background 0.3s;
 }
+.meta:empty { display: none; }
 
+/* Theme Toggle */
 .theme-toggle {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  bottom: 1rem;
+  right: 2rem;
   background: var(--meta-bg);
   color: var(--meta-text);
   border: none;
@@ -116,6 +130,7 @@ header h1 {
   transform: scale(1.05);
 }
 
+/* ---------- MAIN ---------- */
 main {
   background: var(--box-bg);
   padding: 2.5rem;
@@ -125,9 +140,7 @@ main {
   transition: background 0.3s, box-shadow 0.3s;
 }
 
-h1, h2, h3 {
-  color: var(--accent);
-}
+h1, h2, h3 { color: var(--accent); }
 
 img {
   max-width: 100%;
@@ -136,12 +149,14 @@ img {
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 
+/* ---------- FOOTER ---------- */
 footer {
   margin-top: 3rem;
   text-align: center;
   font-size: 0.85rem;
   color: var(--text);
 }
+
 
 /* ===========================================================
    💻 Code & Syntax Highlighting
@@ -184,6 +199,7 @@ pre, .highlight {
 .highlight .na    { color: var(--code-attr); }
 .highlight .nv    { color: var(--code-variable); }
 .highlight .err   { color: var(--code-error); background: rgba(255,0,0,0.15); }
+
 
 /* Scrollbars für Code */
 .highlight::-webkit-scrollbar { height: 8px; }
