@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} – {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      <strong>Fach:</strong> {{ page.subject }} |
+      <strong>Klasse:</strong> {{ page.klasse }} |
+      <strong>Author:</strong> {{ page.author }} |
+      <strong>Datum:</strong> {{ page.date }}       
+      {% if page.partner %}
+        | <strong>Partner:</strong> {{ page.partner }}
+      {% endif %}
+    </p>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    © {{ site.time | date: "%Y" }} – {{ site.title }}
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme',
+        document.body.classList.contains('dark') ? 'dark' : 'light');
+    }
+    // load preference
+    if(localStorage.getItem('theme') === 'dark'){
+      document.body.classList.add('dark');
+    }
+  </script>
+</body>
+</html>
