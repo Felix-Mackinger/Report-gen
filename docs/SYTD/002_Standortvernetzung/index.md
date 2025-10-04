@@ -9,7 +9,8 @@ date: "2025-10-01"
 
 # Aufgabenstellung
 
-<iframe src="../img/Übung_02-Standortvernetung.pdf" width="100%" height="600px"></iframe>
+<iframe src="{{ site.baseurl }}/img/Übung_02-Standortvernetzung_IPv4.pdf.pdf" width="100%" height="600px"></iframe>
+
 
 ### **Vorgehensweise**
 
