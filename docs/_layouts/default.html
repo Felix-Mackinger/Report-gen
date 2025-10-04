@@ -9,14 +9,16 @@
 <body>
   <header>
     <!-- Fach links oben mit Zurück-Button -->
-    {% if page.subject %}
+    
     <div class="header-top-left">
       <span class="header-back">
          <a href="#" onclick="history.back(); return false;" title="Zurück">⬅️</a>
       </span>
+      {% if page.subject %}
       <strong>Fach:</strong> {{ page.subject }}
+      {% endif %}
     </div>
-    {% endif %}
+
 
     <!-- Datum rechts oben -->
     {% if page.date %}
@@ -71,6 +73,7 @@
   </script>
 </body>
 </html>
+
 
 
 
