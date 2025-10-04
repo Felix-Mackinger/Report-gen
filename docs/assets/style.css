@@ -1,13 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
+/* ===========================================================
+   🎨 Designvariablen
+   =========================================================== */
 
 :root {
   --bg: #f5f7fa;
-  --text: #333;
+  --text: #2b2b2b;
   --header-gradient: linear-gradient(135deg, #4A90E2, #7B4397);
   --meta-bg: rgba(255, 255, 255, 0.18);
   --meta-text: #fff;
-  --box-bg: #fff;
+  --box-bg: #ffffff;
   --accent: #4A90E2;
+
+  /* --- Codefarben Light Mode --- */
+  --code-bg: #f3f4f7;
+  --code-text: #2d2d2d;
+  --code-comment: #6a737d;
+  --code-keyword: #7B4397;
+  --code-string: #008000;
+  --code-number: #005cc5;
+  --code-function: #6f42c1;
+  --code-variable: #00509e;
+  --code-tag: #d73a49;
+  --code-attr: #b08800;
+  --code-error: #e5534b;
 }
 
 body.dark {
@@ -18,7 +36,24 @@ body.dark {
   --meta-text: #f0f0f0;
   --box-bg: #2a2a3b;
   --accent: #7dafff;
+
+  /* --- Codefarben Dark Mode (One Dark inspiriert) --- */
+  --code-bg: #282c34;
+  --code-text: #abb2bf;
+  --code-comment: #5c6370;
+  --code-keyword: #c678dd;
+  --code-string: #98c379;
+  --code-number: #d19a66;
+  --code-function: #61afef;
+  --code-variable: #e5c07b;
+  --code-tag: #e06c75;
+  --code-attr: #d19a66;
+  --code-error: #e06c75;
 }
+
+/* ===========================================================
+   🧱 Grundstruktur
+   =========================================================== */
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -31,7 +66,7 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-
+/* ---------- HEADER ---------- */
 header {
   background: var(--header-gradient);
   color: var(--meta-text);
@@ -50,7 +85,6 @@ header h1 {
   color: #fff;
 }
 
-
 .meta {
   margin-top: 0.5rem;
   font-size: 1rem;
@@ -63,7 +97,6 @@ header h1 {
   backdrop-filter: blur(6px);
   line-height: 1.5;
 }
-
 
 .theme-toggle {
   position: absolute;
@@ -82,7 +115,7 @@ header h1 {
   background: rgba(255,255,255,0.3);
 }
 
-
+/* ---------- MAIN ---------- */
 main {
   background: var(--box-bg);
   padding: 2rem;
@@ -96,22 +129,105 @@ h1, h2, h3 {
   color: var(--accent);
 }
 
-code {
-  background: rgba(0,0,0,0.08);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-family: monospace;
-}
-
 img {
   max-width: 100%;
   border-radius: 8px;
   margin: 1rem 0;
 }
 
+/* ---------- FOOTER ---------- */
 footer {
   margin-top: 3rem;
   text-align: center;
   font-size: 0.85rem;
   color: var(--text);
 }
+
+/* ===========================================================
+   💻 Code (Inline + Block)
+   =========================================================== */
+
+code {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95em;
+}
+
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+/* ===========================================================
+   ✨ Rouge Syntax Highlighting (GitHub Pages)
+   =========================================================== */
+
+.highlight {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95em;
+  line-height: 1.6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* --- Standard Rouge Tokens --- */
+.highlight .c     { color: var(--code-comment); font-style: italic; } /* Kommentar */
+.highlight .k     { color: var(--code-keyword); font-weight: 600; }  /* Keyword */
+.highlight .s     { color: var(--code-string); }                     /* String */
+.highlight .n     { color: var(--code-variable); }                   /* Name/Variable */
+.highlight .nf    { color: var(--code-function); }                   /* Funktion */
+.highlight .o     { color: var(--code-keyword); }                    /* Operator */
+.highlight .p     { color: var(--code-text); }                       /* Zeichen */
+.highlight .mi,
+.highlight .m     { color: var(--code-number); }                     /* Zahl */
+.highlight .nb,
+.highlight .bp    { color: var(--code-variable); }                   /* Builtins */
+.highlight .nt    { color: var(--code-tag); }                        /* HTML-Tags */
+.highlight .na    { color: var(--code-attr); }                       /* HTML-Attribute */
+.highlight .nv    { color: var(--code-variable); }                   /* Variablen */
+.highlight .err   { color: var(--code-error); background: rgba(255,0,0,0.15); }
+
+/* --- Sprache-spezifische Anpassungen --- */
+.highlight.html .nt  { color: var(--code-tag); }
+.highlight.html .na  { color: var(--code-attr); }
+.highlight.html .s   { color: var(--code-string); }
+
+.highlight.js .k     { color: var(--code-keyword); }
+.highlight.js .nf    { color: var(--code-function); }
+.highlight.js .s     { color: var(--code-string); }
+.highlight.js .mi    { color: var(--code-number); }
+
+.highlight.python .k { color: var(--code-keyword); }
+.highlight.python .s { color: var(--code-string); }
+.highlight.python .nf { color: var(--code-function); }
+.highlight.python .bp { color: var(--code-variable); }
+
+.highlight.csharp .k  { color: var(--code-keyword); }
+.highlight.csharp .nf { color: var(--code-function); }
+.highlight.csharp .s  { color: var(--code-string); }
+.highlight.csharp .n  { color: var(--code-variable); }
+.highlight.csharp .mi { color: var(--code-number); }
+
+.highlight.cpp .k  { color: var(--code-keyword); }
+.highlight.cpp .nf { color: var(--code-function); }
+.highlight.cpp .s  { color: var(--code-string); }
+.highlight.cpp .n  { color: var(--code-variable); }
+
+/* --- Scrollbar Styling --- */
+.highlight::-webkit-scrollbar { height: 8px; }
+.highlight::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 8px; }
+.highlight::-webkit-scrollbar-track { background: transparent; }
