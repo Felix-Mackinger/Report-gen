@@ -12,7 +12,7 @@
     {% if page.subject %}
     <div class="header-top-left">
       <span class="header-back">
-         <a href="{{ '/' | relative_url }}" title="Zurück zur Startseite">⬅️ Zurück</a>
+         <a href="#" onclick="history.back(); return false;" title="Zurück">⬅️</a>
       </span>
       <strong>Fach:</strong> {{ page.subject }}
     </div>
@@ -71,3 +71,4 @@
   </script>
 </body>
 </html>
+
