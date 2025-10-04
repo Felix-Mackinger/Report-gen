@@ -9,7 +9,24 @@ date: "2025-10-01"
 
 # Aufgabenstellung
 
-<iframe src="{{ site.baseurl }}/img/Übung_02-Standortvernetzung_IPv4.pdf.pdf" width="100%" height="600px"></iframe>
+<div id="pdf-viewer"></div>
+<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+<script>
+  var url = '002_Standortvernetzung/img/Übung_02-Standortvernetzung_IPv4.pdf';
+  pdfjsLib.getDocument(url).promise.then(function(pdf) {
+    pdf.getPage(1).then(function(page) {
+      var scale = 1.5;
+      var viewport = page.getViewport({scale: scale});
+      var canvas = document.createElement('canvas');
+      var context = canvas.getContext('2d');
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+      document.getElementById('pdf-viewer').appendChild(canvas);
+      page.render({canvasContext: context, viewport: viewport});
+    });
+  });
+</script>
+
 
 
 ### **Vorgehensweise**
