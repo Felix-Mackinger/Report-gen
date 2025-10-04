@@ -1,23 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
 
-
 /* ===========================================================
-   🎨 Designvariablen
+   🎨 Farbvariablen & Theme
    =========================================================== */
 
 :root {
-  --bg: #f5f7fa;
-  --text: #2b2b2b;
+  --bg: #f0f2f5;
+  --text: #1c1c1e;
   --header-gradient: linear-gradient(135deg, #4A90E2, #7B4397);
   --meta-bg: rgba(255, 255, 255, 0.18);
   --meta-text: #fff;
   --box-bg: #ffffff;
   --accent: #4A90E2;
 
-  /* --- Codefarben Light Mode --- */
-  --code-bg: #f3f4f7;
-  --code-text: #2d2d2d;
+  /* Codeblock Light */
+  --code-bg: #f7f7f7;
+  --code-text: #2b2b2b;
   --code-comment: #6a737d;
   --code-keyword: #7B4397;
   --code-string: #008000;
@@ -38,7 +37,7 @@ body.dark {
   --box-bg: #2a2a3b;
   --accent: #7dafff;
 
-  /* --- Codefarben Dark Mode --- */
+  /* Codeblock Dark */
   --code-bg: #282c34;
   --code-text: #abb2bf;
   --code-comment: #5c6370;
@@ -53,27 +52,26 @@ body.dark {
 }
 
 /* ===========================================================
-   🧱 Grundstruktur
+   🧱 Grundlayout
    =========================================================== */
 
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg);
   color: var(--text);
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 2rem;
   line-height: 1.7;
   transition: background 0.3s, color 0.3s;
 }
 
-/* ---------- HEADER ---------- */
 header {
   background: var(--header-gradient);
   color: var(--meta-text);
-  padding: 2.5rem 2rem 3rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  padding: 3rem 2rem 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   text-align: center;
   position: relative;
 }
@@ -81,22 +79,22 @@ header {
 header h1 {
   margin: 0 0 1rem 0;
   font-weight: 700;
-  font-size: 2.4rem;
-  text-shadow: 0 3px 6px rgba(0,0,0,0.25);
-  color: #fff;
+  font-size: 2.8rem;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .meta {
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   font-size: 1rem;
   display: inline-block;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  border-radius: 12px;
   background: var(--meta-bg);
   color: var(--meta-text);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
   line-height: 1.5;
+  transition: background 0.3s;
 }
 
 .theme-toggle {
@@ -106,24 +104,25 @@ header h1 {
   background: var(--meta-bg);
   color: var(--meta-text);
   border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.2s;
+  font-size: 0.9rem;
+  transition: all 0.2s;
 }
 .theme-toggle:hover {
   background: rgba(255,255,255,0.3);
+  transform: scale(1.05);
 }
 
-/* ---------- MAIN ---------- */
 main {
   background: var(--box-bg);
-  padding: 2rem;
-  border-radius: 12px;
+  padding: 2.5rem;
+  border-radius: 16px;
   margin-top: 2rem;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-  transition: background 0.3s;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 h1, h2, h3 {
@@ -132,11 +131,11 @@ h1, h2, h3 {
 
 img {
   max-width: 100%;
-  border-radius: 8px;
-  margin: 1rem 0;
+  border-radius: 12px;
+  margin: 1.2rem 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 
-/* ---------- FOOTER ---------- */
 footer {
   margin-top: 3rem;
   text-align: center;
@@ -145,54 +144,38 @@ footer {
 }
 
 /* ===========================================================
-   💻 Code (Inline + Block)
+   💻 Code & Syntax Highlighting
    =========================================================== */
 
 code {
   background: var(--code-bg);
   color: var(--code-text);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
+  padding: 0.25em 0.5em;
+  border-radius: 6px;
   font-family: 'Fira Code', monospace;
   font-size: 0.95em;
 }
 
-pre {
+pre, .highlight {
   background: var(--code-bg);
   color: var(--code-text);
-  padding: 1rem 1.2rem;
-  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  border-radius: 14px;
   overflow-x: auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   font-family: 'Fira Code', monospace;
   font-size: 0.95em;
   line-height: 1.6;
+  margin: 1.5rem 0;
 }
 
-/* ===========================================================
-   ✨ Rouge Syntax Highlighting (GitHub Pages)
-   =========================================================== */
-
-.highlight {
-  background: var(--code-bg);
-  color: var(--code-text);
-  padding: 1rem 1.2rem;
-  border-radius: 10px;
-  overflow-x: auto;
-  font-family: 'Fira Code', monospace;
-  font-size: 0.95em;
-  line-height: 1.6;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* --- Standard Rouge Tokens --- */
+/* Rouge Tokens */
 .highlight .c     { color: var(--code-comment); font-style: italic; }
 .highlight .k     { color: var(--code-keyword); font-weight: 600; }
 .highlight .s     { color: var(--code-string); }
 .highlight .n     { color: var(--code-variable); }
 .highlight .nf    { color: var(--code-function); }
 .highlight .o     { color: var(--code-keyword); }
-.highlight .p     { color: var(--code-text); }
 .highlight .mi,
 .highlight .m     { color: var(--code-number); }
 .highlight .nb,
@@ -202,33 +185,7 @@ pre {
 .highlight .nv    { color: var(--code-variable); }
 .highlight .err   { color: var(--code-error); background: rgba(255,0,0,0.15); }
 
-/* --- Sprache-spezifische Anpassungen --- */
-.highlight.html .nt  { color: var(--code-tag); }
-.highlight.html .na  { color: var(--code-attr); }
-.highlight.html .s   { color: var(--code-string); }
-
-.highlight.js .k     { color: var(--code-keyword); }
-.highlight.js .nf    { color: var(--code-function); }
-.highlight.js .s     { color: var(--code-string); }
-.highlight.js .mi    { color: var(--code-number); }
-
-.highlight.python .k { color: var(--code-keyword); }
-.highlight.python .s { color: var(--code-string); }
-.highlight.python .nf { color: var(--code-function); }
-.highlight.python .bp { color: var(--code-variable); }
-
-.highlight.csharp .k  { color: var(--code-keyword); }
-.highlight.csharp .nf { color: var(--code-function); }
-.highlight.csharp .s  { color: var(--code-string); }
-.highlight.csharp .n  { color: var(--code-variable); }
-.highlight.csharp .mi { color: var(--code-number); }
-
-.highlight.cpp .k  { color: var(--code-keyword); }
-.highlight.cpp .nf { color: var(--code-function); }
-.highlight.cpp .s  { color: var(--code-string); }
-.highlight.cpp .n  { color: var(--code-variable); }
-
-/* --- Scrollbar Styling --- */
+/* Scrollbars für Code */
 .highlight::-webkit-scrollbar { height: 8px; }
 .highlight::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 8px; }
 .highlight::-webkit-scrollbar-track { background: transparent; }
