@@ -31,7 +31,7 @@ Die Interfaces erhielten folgende Adressen:
 
 Für die Verbindung der LANs wurden statische Routen gesetzt:
 
-```
+```console
 R-BR-1: ip route 192.168.2.0 255.255.255.0 10.0.0.2
 R-S-1: ip route 192.168.1.0 255.255.255.0 10.0.0.1
 ```
