@@ -16,7 +16,7 @@ date: "2025-10-01"
 Beide Router wurden mit Hostname, Domain und Benutzerzugang eingerichtet.
 Die Interfaces erhielten folgende Adressen:
 
-![Logical Layout](/img/logical-layout.png)
+![Logical Layout](../img/logical-layout.png)
 
 * **R-BR-1:**
 
