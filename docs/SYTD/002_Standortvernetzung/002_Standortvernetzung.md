@@ -1,8 +1,64 @@
 ---
-title: "SYTD Aufgabe 1"
+title: "002_Standortvernetzung"
+author: "Felix Mackinger"
+klasse: "4AHITS"
+subject: "SYTD"
+date: "2025-10-01"
 ---
 
-# SYTD Aufgabe 1
 
-Hier kommt der Inhalt der Aufgabe hin.  
-Du kannst Markdown, Bilder, Codeblöcke usw. verwenden.
+# Aufgabenstellung
+
+!(Aufgabenstellung 002_Standortvernetzung)[/img/Übung_02-Standortvernetung.pdf]
+
+
+### **Vorgehensweise**
+
+Beide Router wurden mit Hostname, Domain und Benutzerzugang eingerichtet.
+Die Interfaces erhielten folgende Adressen:
+
+!(Logical Layout)[/img/logical-layout.png]
+
+* **R-BR-1:**
+
+  * Fa0/0 → 192.168.1.1/24
+  * Fa0/1 → 10.0.0.1/30
+
+* **R-S-1:**
+
+  * Fa0/0 → 192.168.2.1/24
+  * Fa0/1 → 10.0.0.2/30
+
+Für die Verbindung der LANs wurden statische Routen gesetzt:
+
+```
+R-BR-1: ip route 192.168.2.0 255.255.255.0 10.0.0.2
+R-S-1: ip route 192.168.1.0 255.255.255.0 10.0.0.1
+```
+
+---
+
+### PING Tests
+
+!()[]
+
+!()[]
+
+
+---
+
+
+### **Fehleranalyse**
+
+Zunächst war kein Ping zwischen den Standorten möglich.
+Ursache war eine falsche Subnetzmaske (**/32 statt /24**) in den statischen Routen.
+Nach der Korrektur funktionierte das Routing einwandfrei.
+
+---
+
+### **Ergebnis**
+
+Nach der Anpassung konnten beide LANs erfolgreich miteinander kommunizieren.
+Die Verbindung über das **10.0.0.0/30-Netz** war stabil und die Standortvernetzung funktionierte laut Aufgabenstellung.
+
+
