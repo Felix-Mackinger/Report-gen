@@ -9,7 +9,7 @@ date: "2025-10-01"
 
 # Aufgabenstellung
 
-![Aufgabenstellung](docs/SYTD/002_Standortvernetzung/img/Übung_02-Standortvernetzung_IPv4.pdf)
+[Aufgabenstellung](docs/SYTD/002_Standortvernetzung/img/Übung_02-Standortvernetzung_IPv4.pdf)
 
 
 ### **Vorgehensweise**
