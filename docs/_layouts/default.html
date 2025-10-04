@@ -4,21 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} – {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
   <header>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
+    <!-- Fach links oben -->
+    {% if page.subject %}
+    <div class="header-top-left">
+      <strong>Fach:</strong> {{ page.subject }}
+    </div>
+    {% endif %}
+
+    <!-- Datum rechts oben -->
+    {% if page.date %}
+    <div class="header-top-right">
+      <strong>Datum:</strong> {{ page.date }}
+    </div>
+    {% endif %}
+
+    <!-- Titel -->
     <h1>{{ page.title }}</h1>
+
+    <!-- Name & Klasse unter Titel -->
+    {% if page.author or page.klasse or page.partner %}
     <p class="meta">
-      <strong>Fach:</strong> {{ page.subject }} |
-      <strong>Klasse:</strong> {{ page.klasse }} |
-      <strong>Author:</strong> {{ page.author }} |
-      <strong>Datum:</strong> {{ page.date }}       
+      {% if page.author %}
+        <strong>Author:</strong> {{ page.author }}
+      {% endif %}
+      {% if page.klasse %}
+        {% if page.author %} | {% endif %}
+        <strong>Klasse:</strong> {{ page.klasse }}
+      {% endif %}
       {% if page.partner %}
-        | <strong>Partner:</strong> {{ page.partner }}
+        {% if page.author or page.klasse %} | {% endif %}
+        <strong>Partner:</strong> {{ page.partner }}
       {% endif %}
     </p>
+    {% endif %}
+
+    <!-- Theme Toggle rechts unten -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
   </header>
 
   <main>
@@ -42,4 +67,3 @@
   </script>
 </body>
 </html>
-
