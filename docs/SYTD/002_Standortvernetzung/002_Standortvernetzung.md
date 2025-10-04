@@ -62,3 +62,4 @@ Nach der Anpassung konnten beide LANs erfolgreich miteinander kommunizieren.
 Die Verbindung über das **10.0.0.0/30-Netz** war stabil und die Standortvernetzung funktionierte laut Aufgabenstellung.
 
 
+
