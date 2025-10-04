@@ -213,19 +213,32 @@ pre, .highlight {
   margin: 1.5rem 0;
 }
 
+/* Copy-Button für Codeblocks */
 .copy-btn {
-  background: var(--meta-bg);
-  color: var(--meta-text);
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(255, 255, 255, 0.15); /* helles Overlay für Light-Theme */
+  color: var(--text);
   border: none;
-  padding: 0.3rem 0.7rem;
-  border-radius: 8px;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
   cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: 600;
-  transition: all 0.2s;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
 }
+
+/* Dark Theme Anpassung */
+body.dark .copy-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+/* Hover Effekt */
 .copy-btn:hover {
-  background: rgba(255,255,255,0.3);
+  background: var(--accent);
+  color: #fff;
   transform: scale(1.05);
 }
 
