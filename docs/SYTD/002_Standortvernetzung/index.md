@@ -9,7 +9,7 @@ date: "2025-10-01"
 
 # Aufgabenstellung
 
-<iframe src="https://htblabraunau-my.sharepoint.com/:b:/g/personal/felix_mackinger_htl-braunau_at/ETTLjKQDxxVHnrNhWaCeRBkBFll6su6qZK80IAWoc4a4Ig?e=9KYR4F" width="100%" height="600px"></iframe>
+[](docs/SYTD/002_Standortvernetzung/img/Übung_02-Standortvernetzung_IPv4.pdf)
 
 
 ### **Vorgehensweise**
