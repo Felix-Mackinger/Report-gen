@@ -9,7 +9,7 @@ date: "2025-10-01"
 
 # Aufgabenstellung
 
-(Aufgabenstellung 002_Standortvernetzung)[/img/Übung_02-Standortvernetung.pdf]
+[Aufgabenstellung 002_Standortvernetzung](/img/Übung_02-Standortvernetung.pdf)
 
 
 ### **Vorgehensweise**
@@ -17,7 +17,7 @@ date: "2025-10-01"
 Beide Router wurden mit Hostname, Domain und Benutzerzugang eingerichtet.
 Die Interfaces erhielten folgende Adressen:
 
-!(Logical Layout)[/img/logical-layout.png]
+![Logical Layout](/img/logical-layout.png)
 
 * **R-BR-1:**
 
@@ -40,9 +40,9 @@ R-S-1: ip route 192.168.1.0 255.255.255.0 10.0.0.1
 
 ### PING Tests
 
-!(Ping von PC-A zu Switch Router)[/img/ping-BR.png]
+![Ping von PC-A zu Switch Router](/img/ping-BR.png)
 
-!(Ping von PC-B zu Switch Router)[/img/ping-S.png]
+![Ping von PC-B zu Switch Router](/img/ping-S.png)
 
 
 ---
