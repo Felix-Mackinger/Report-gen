@@ -37,7 +37,7 @@ body.dark {
   --box-bg: #2a2a3b;
   --accent: #7dafff;
 
-  /* --- Codefarben Dark Mode (One Dark inspiriert) --- */
+  /* --- Codefarben Dark Mode --- */
   --code-bg: #282c34;
   --code-text: #abb2bf;
   --code-comment: #5c6370;
@@ -185,20 +185,20 @@ pre {
 }
 
 /* --- Standard Rouge Tokens --- */
-.highlight .c     { color: var(--code-comment); font-style: italic; } /* Kommentar */
-.highlight .k     { color: var(--code-keyword); font-weight: 600; }  /* Keyword */
-.highlight .s     { color: var(--code-string); }                     /* String */
-.highlight .n     { color: var(--code-variable); }                   /* Name/Variable */
-.highlight .nf    { color: var(--code-function); }                   /* Funktion */
-.highlight .o     { color: var(--code-keyword); }                    /* Operator */
-.highlight .p     { color: var(--code-text); }                       /* Zeichen */
+.highlight .c     { color: var(--code-comment); font-style: italic; }
+.highlight .k     { color: var(--code-keyword); font-weight: 600; }
+.highlight .s     { color: var(--code-string); }
+.highlight .n     { color: var(--code-variable); }
+.highlight .nf    { color: var(--code-function); }
+.highlight .o     { color: var(--code-keyword); }
+.highlight .p     { color: var(--code-text); }
 .highlight .mi,
-.highlight .m     { color: var(--code-number); }                     /* Zahl */
+.highlight .m     { color: var(--code-number); }
 .highlight .nb,
-.highlight .bp    { color: var(--code-variable); }                   /* Builtins */
-.highlight .nt    { color: var(--code-tag); }                        /* HTML-Tags */
-.highlight .na    { color: var(--code-attr); }                       /* HTML-Attribute */
-.highlight .nv    { color: var(--code-variable); }                   /* Variablen */
+.highlight .bp    { color: var(--code-variable); }
+.highlight .nt    { color: var(--code-tag); }
+.highlight .na    { color: var(--code-attr); }
+.highlight .nv    { color: var(--code-variable); }
 .highlight .err   { color: var(--code-error); background: rgba(255,0,0,0.15); }
 
 /* --- Sprache-spezifische Anpassungen --- */
