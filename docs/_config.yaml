@@ -2,3 +2,4 @@ title: "Felix Mackinger"
 description: "Automatisierte Markdown-Reports"
 theme: null   # kein GitHub-Theme, wir nutzen unser eigenes Layout
 markdown: kramdown
+highlighter: rouge
