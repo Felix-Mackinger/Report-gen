@@ -213,6 +213,23 @@ pre, .highlight {
   margin: 1.5rem 0;
 }
 
+.copy-btn {
+  background: var(--meta-bg);
+  color: var(--meta-text);
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.copy-btn:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.05);
+}
+
+
 /* Rouge Tokens */
 .highlight .c     { color: var(--code-comment); font-style: italic; }
 .highlight .k     { color: var(--code-keyword); font-weight: 600; }
