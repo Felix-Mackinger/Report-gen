@@ -1,19 +1,117 @@
-/* Grundfarben */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --bg: #f5f7fa;
+  --text: #333;
+  --header-gradient: linear-gradient(135deg, #4A90E2, #7B4397);
+  --meta-bg: rgba(255, 255, 255, 0.18);
+  --meta-text: #fff;
+  --box-bg: #fff;
+  --accent: #4A90E2;
+}
+
+body.dark {
+  --bg: #1e1e2f;
+  --text: #e0e0e0;
+  --header-gradient: linear-gradient(135deg, #7B4397, #4A90E2);
+  --meta-bg: rgba(255, 255, 255, 0.1);
+  --meta-text: #f0f0f0;
+  --box-bg: #2a2a3b;
+  --accent: #7dafff;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #000000;
-  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
 }
 
-.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
+
+header {
+  background: var(--header-gradient);
+  color: var(--meta-text);
+  padding: 2.5rem 2rem 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  position: relative;
 }
 
-/* Button Style */
-button {
-  margin: 1em 0;
-  padding: 0.5em 1em;
+header h1 {
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+
+.meta {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  background: var(--meta-bg);
+  color: var(--meta-text);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  backdrop-filter: blur(6px);
+  line-height: 1.5;
+}
+
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--meta-bg);
+  color: var(--meta-text);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+
+main {
+  background: var(--box-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  transition: background 0.3s;
+}
+
+h1, h2, h3 {
+  color: var(--accent);
+}
+
+code {
+  background: rgba(0,0,0,0.08);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text);
 }
