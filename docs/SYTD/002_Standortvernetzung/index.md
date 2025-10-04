@@ -9,7 +9,7 @@ date: "2025-10-01"
 
 # Aufgabenstellung
 
-[Aufgabenstellung 002_Standortvernetzung](/img/Übung_02-Standortvernetung.pdf)
+![Aufgabenstellung 002_Standortvernetzung](/img/Übung_02-Standortvernetung.pdf)
 
 
 ### **Vorgehensweise**
