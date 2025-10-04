@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} – {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
   <header>
-    <!-- Fach links oben -->
+    <!-- Fach links oben mit Zurück-Button -->
     {% if page.subject %}
     <div class="header-top-left">
+      <span class="header-back">
+         <a href="{{ '/' | relative_url }}" title="Zurück zur Startseite">⬅️ Zurück</a>
+      </span>
       <strong>Fach:</strong> {{ page.subject }}
     </div>
     {% endif %}
@@ -28,17 +31,9 @@
     <!-- Name & Klasse unter Titel -->
     {% if page.author or page.klasse or page.partner %}
     <p class="meta">
-      {% if page.author %}
-        <strong>Author:</strong> {{ page.author }}
-      {% endif %}
-      {% if page.klasse %}
-        {% if page.author %} | {% endif %}
-        <strong>Klasse:</strong> {{ page.klasse }}
-      {% endif %}
-      {% if page.partner %}
-        {% if page.author or page.klasse %} | {% endif %}
-        <strong>Partner:</strong> {{ page.partner }}
-      {% endif %}
+      {% if page.author %}<strong>Author:</strong> {{ page.author }}{% endif %}
+      {% if page.klasse %}{% if page.author %} | {% endif %}<strong>Klasse:</strong> {{ page.klasse }}{% endif %}
+      {% if page.partner %}{% if page.author or page.klasse %} | {% endif %}<strong>Partner:</strong> {{ page.partner }}{% endif %}
     </p>
     {% endif %}
 
@@ -60,11 +55,19 @@
       localStorage.setItem('theme',
         document.body.classList.contains('dark') ? 'dark' : 'light');
     }
-    // load preference
     if(localStorage.getItem('theme') === 'dark'){
       document.body.classList.add('dark');
+    }
+
+    // Zurück-Button Logik
+    function goBack(fach) {
+      if(document.referrer && document.referrer !== window.location.href){
+        history.back();
+      } else {
+        // Fallback: auf die Fach-Startseite
+        window.location.href = '/' + fach + '/';
+      }
     }
   </script>
 </body>
 </html>
-
