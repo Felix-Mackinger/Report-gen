@@ -38,6 +38,31 @@ R-S-1: ip route 192.168.1.0 255.255.255.0 10.0.0.1
 
 ---
 
+### PING Tests
+
+![Ping von PC-A zu Switch Router](/img/ping-BR.png)
+
+![Ping von PC-B zu Switch Router](/img/ping-S.png)
+
+
+---
+
+
+### **Fehleranalyse**
+
+Zunächst war kein Ping zwischen den Standorten möglich.
+Ursache war eine falsche Subnetzmaske (**/32 statt /24**) in den statischen Routen.
+Nach der Korrektur funktionierte das Routing einwandfrei.
+
+---
+
+### **Ergebnis**
+
+Nach der Anpassung konnten beide LANs erfolgreich miteinander kommunizieren.
+Die Verbindung über das **10.0.0.0/30-Netz** war stabil und die Standortvernetzung funktionierte laut Aufgabenstellung.
+
+---
+
 ### Code
 
 #### R-BR-1
@@ -597,31 +622,5 @@ line vty 5 15
 !
 end
 ```
-
----
-
-### PING Tests
-
-![Ping von PC-A zu Switch Router](/img/ping-BR.png)
-
-![Ping von PC-B zu Switch Router](/img/ping-S.png)
-
-
----
-
-
-### **Fehleranalyse**
-
-Zunächst war kein Ping zwischen den Standorten möglich.
-Ursache war eine falsche Subnetzmaske (**/32 statt /24**) in den statischen Routen.
-Nach der Korrektur funktionierte das Routing einwandfrei.
-
----
-
-### **Ergebnis**
-
-Nach der Anpassung konnten beide LANs erfolgreich miteinander kommunizieren.
-Die Verbindung über das **10.0.0.0/30-Netz** war stabil und die Standortvernetzung funktionierte laut Aufgabenstellung.
-
 
 
