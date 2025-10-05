@@ -55,6 +55,7 @@ R-S-1: ipv6 route 2001:ABC:DB8:ACA1:11::/64 2001:BC:DB8:ACAD:1::1
 Zunächst war kein Ping zwischen den Standorten möglich.
 Ursache war das bei den Statischen Routen `R-BR-1: ipv6 route 2001:ABC:DB8:ACAD:11::/64 2001:BC:DB8:ACAD:1::2`
                                                                                 ^^  <- Die 11 entfernt wurde durch die Präfix länge.
+
 Deswegen ist ein Loop im `2001:BC:DB8:ACAD:1::/64` entstanden.
 Nach der Umstellung auf diese Netze `2001:ABC:DB8:ACA1:11::/64` `2001:ABC:DB8:ACA2:12::/64` funktionierte das Routing einwandfrei.
 
