@@ -392,14 +392,14 @@ end
 
 ## Ping check
 
-Router1 -> Router 2 
-![Router1-Router2](/img/pingrouter1-2.png.png)
+Router1 -> Router 2  
+![Router1-Router2](/img/pingrouter1-2.png)
 
-Switch02 -> Switch05
+Switch02 -> Switch05  
 ![Switch02-Switch05](/img/pingswitch02-05.png)
 
-PC03 -> PC06 & PC07
+PC03 -> PC06 & PC07  
 ![PC03-PC06_7](/img/pingpc03-pc06_7.png)
 
-PC06 -> PC03 & PC04
+PC06 -> PC03 & PC04  
 ![PC06-PC03_4](/img/pingpc06-pc03_4.png)
