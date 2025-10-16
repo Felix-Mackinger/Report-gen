@@ -116,8 +116,7 @@ interface Vlan1
  no ip address
 !
 ip classless
-!
-ip route 192.168.21.0 255.255.255.0 GigabitEthernet0/0 
+! 
 ip route 192.168.101.0 255.255.255.0 192.168.250.2 
 ip route 192.168.102.0 255.255.255.0 192.168.251.2 
 ip route 192.168.103.0 255.255.255.0 192.168.252.2 
@@ -227,7 +226,6 @@ interface Vlan1
 !
 ip classless
 !
-ip route 192.168.101.0 255.255.255.0 GigabitEthernet0/0 
 ip route 192.168.21.0 255.255.255.0 192.168.250.1 
 ip route 192.168.102.0 255.255.255.0 192.168.250.1
 ip route 192.168.103.0 255.255.255.0 192.168.250.1
@@ -491,8 +489,7 @@ interface Vlan1
  no ip address
 !
 ip classless
-!
-ip route 192.168.102.0 255.255.255.0 GigabitEthernet0/0 
+! 
 ip route 192.168.21.0 255.255.255.0 192.168.250.1 
 ip route 192.168.101.0 255.255.255.0 192.168.250.1
 ip route 192.168.103.0 255.255.255.0 192.168.250.1
@@ -595,9 +592,10 @@ end
 Router1 -> Router 3  
 ![Router1-Router3](/img/pingrouter1-3.png)
 
+// Ist jetzt im funktionierenden Stand. Falsche Route
 Reply von Gateway: Destination Host unreachable
 -->
-```
+
 Switch02 -> Switch06  
 ![Switch02-Switch06](/img/pingswitch02-06.png)
 
@@ -606,7 +604,7 @@ PC03 -> PC09 & PC10
 
 PC09 -> PC03 & PC04  
 ![PC09-PC03_4](/img/pingpc09-pc03_4.png)
-```
+
 
 
 # Aufgabe 3 *Paris Erweiterung*
@@ -693,10 +691,9 @@ interface Vlan1
 !
 ip classless
 !
-ip route 192.168.103.0 255.255.255.0 GigabitEthernet0/0 
-ip route 192.168.21.0 255.255.255.0 192.168.250.1 
-ip route 192.168.101.0 255.255.255.0 192.168.250.1
-ip route 192.168.102.0 255.255.255.0 192.168.250.1
+ip route 192.168.21.0 255.255.255.0 192.168.252.1 
+ip route 192.168.101.0 255.255.255.0 192.168.252.1
+ip route 192.168.102.0 255.255.255.0 192.168.252.1
 !
 !
 ip flow-export version 9
@@ -796,9 +793,10 @@ end
 Router1 -> Router 4  
 ![Router1-Router4](/img/pingrouter1-4.png)
 
+// Ist jetzt im funktionierenden Stand. Falsche Route
 Reply von Gateway: Destination Host unreachable
 -->
-```
+
 Switch02 -> Switch07  
 ![Switch02-Switch07](/img/pingswitch02-07.png)
 
@@ -807,4 +805,3 @@ PC03 -> PC11 & PC12
 
 PC11 -> PC03 & PC04  
 ![PC11-PC03_4](/img/pingpc11-pc03_4.png)
-```
