@@ -9,7 +9,7 @@ date: "2025-10-23"
 
 # Aufgabenstellung
 
-[Aufgabenstellung](https://felix-mackinger.github.io/Report-gen/SYTD/docs/SYTD/005_VLAN-Trunks-Access-Ports/img/Übung_05-VLANs_Trunks_und_Access_Ports.pdf)
+[Aufgabenstellung](https://felix-mackinger.github.io/Report-gen/SYTD/docs/SYTD/005_VLAN-Trunks-Access-Ports/img/Übung_05-VLANs_Trunks_und_Access_Ports.html)
 
 
 ![Logical Layout](/img/logical-layout.png)
