@@ -379,3 +379,13 @@ show vlan brief
 
 PC01 -> PC03 & PC02  
 ![PC01-PC02-5](/img/Pingcheck.png)
+
+| VLAN-ID | VLAN-Name   | Beschreibung / Zweck        | IP-Bereich        | Gateway (Router) | Switch01 Ports           | Switch02 Ports           |
+|----------|-------------|-----------------------------|-------------------|------------------|---------------------------|---------------------------|
+| 1        | vlan_MGMT   | Management-VLAN (Switches)  | 192.168.21.0/24   | 192.168.21.254   | Fa0/1, Fa0/22–23          | Fa0/1, Fa0/22             |
+| 10       | vlan_blue   | Abteilung Blue (Clients)    | 192.168.21.0/24   | 192.168.21.254   | Fa0/2–5                   | Fa0/2–5                   |
+| 11       | vlan_green  | Abteilung Green (Clients)   | 192.168.21.0/24   | 192.168.21.254   | Fa0/6–10                  | Fa0/6–10                  |
+| 12       | vlan_red    | Abteilung Red (Clients)     | 192.168.21.0/24   | 192.168.21.254   | Fa0/11–15                 | Fa0/11–15                 |
+| 13       | vlan_yellow | Abteilung Yellow (Clients)  | 192.168.21.0/24   | 192.168.21.254   | Fa0/16–20                 | Fa0/16–20                 |
+| 14       | vlan_black  | Abteilung Black (Clients)   | 192.168.21.0/24   | 192.168.21.254   | Fa0/21                    | Fa0/21                    |
+| —        | —           | **Trunk-Uplinks**           | —                 | —                | Fa0/24 (→ Switch02), Gi0/1–2 | Fa0/23 (→ Switch01), Fa0/24 (→ Router), Gi0/1–2 |
