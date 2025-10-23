@@ -380,6 +380,9 @@ show vlan brief
 PC01 -> PC03 & PC02  
 ![PC01-PC02-5](/img/Pingcheck.png)
 
+Pings gehen derzeit nur VLAN intern.
+
+
 | VLAN-ID | VLAN-Name   | Beschreibung / Zweck        | IP-Bereich        | Gateway (Router) | Switch01 Ports           | Switch02 Ports           |
 |----------|-------------|-----------------------------|-------------------|------------------|---------------------------|---------------------------|
 | 1        | vlan_MGMT   | Management-VLAN (Switches)  | 192.168.21.0/24   | 192.168.21.254   | Fa0/1, Fa0/22–23          | Fa0/1, Fa0/22             |
