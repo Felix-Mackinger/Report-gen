@@ -304,7 +304,7 @@ end
 
 Und noch den Befehl 
 ```c
-vtp mode server
+vtp mode client
 ```
 
 
@@ -334,7 +334,6 @@ interface range fastEthernet0/1 - 22
  switchport access vlan 1
  exit
 
-! VLAN 10 (blue)
 interface range fastEthernet0/2 - 5
  switchport mode access
  switchport access vlan 10
