@@ -10,4 +10,4 @@
 
 ### [005_VLAN-Trunks-Access](005_VLAN-Trunks-Access-Ports/index.html)
 
-### [007_Inter_VLAN-Routing](007_Inter_VLAN_Routing/index.html)
+### [007_Inter_VLAN-Routing](007_Inter-VLAN-Routing/index.html)
