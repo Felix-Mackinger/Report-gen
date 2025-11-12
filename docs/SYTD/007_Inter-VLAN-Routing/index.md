@@ -520,7 +520,7 @@ end
 ![Antworten Blatt](/img/Antwortenblatt/A(6).png)
 ![Antworten Blatt](/img/Antwortenblatt/A(7).png)
 ![Antworten Blatt](/img/Antwortenblatt/A(8).png)
-![Antworten Blatt](/img/Antwortenblatt/A(9).png)
+![Antworten Blatt](docs/SYTD/007_Inter-VLAN-Routing/img/Antwortenblatt/A(9).png)
 ![Antworten Blatt](/img/Antwortenblatt/A(10).png)
 ![Antworten Blatt](/img/Antwortenblatt/A(11).png)
 ![Antworten Blatt](/img/Antwortenblatt/A(12).png)
