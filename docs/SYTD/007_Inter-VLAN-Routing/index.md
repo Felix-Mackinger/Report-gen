@@ -14,7 +14,7 @@ date: "2025-11-06"
 
 ## Router on A Stick
 
-![Logical Layout](/img/logical-layout-ROS.png)
+![Logical Layout](/img/logical-layout_ROS.png)
 
 
 ### VLAN
@@ -243,7 +243,7 @@ end
 
 ## Layer 3 Switch
 
-![Logical Layout](/img/logical-layout-L3S.png)
+![Logical Layout](/img/logical-layout_L3S.png)
 
 ```sh
 version 12.2
@@ -505,25 +505,25 @@ end
 
 ## Trouble Shoot InterVlan Routing
 
-![Logical Layout](/img/logical-layout-TSIV.png)
+![Logical Layout](/img/logical-layout_TSIV.png)
 
 
 
 
 # Antwortenblatt
 
-![Antworten Blatt](/img/Antwortenblatt/A(1)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(2)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(3)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(4)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(5)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(6)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(7)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(8)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(9)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(10)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(11)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(12)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(13)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(14)).png)
-![Antworten Blatt](/img/Antwortenblatt/A(15)).png)
+![Antworten Blatt](/img/Antwortenblatt/A(1).png)
+![Antworten Blatt](/img/Antwortenblatt/A(2).png)
+![Antworten Blatt](/img/Antwortenblatt/A(3).png)
+![Antworten Blatt](/img/Antwortenblatt/A(4).png)
+![Antworten Blatt](/img/Antwortenblatt/A(5).png)
+![Antworten Blatt](/img/Antwortenblatt/A(6).png)
+![Antworten Blatt](/img/Antwortenblatt/A(7).png)
+![Antworten Blatt](/img/Antwortenblatt/A(8).png)
+![Antworten Blatt](/img/Antwortenblatt/A(9).png)
+![Antworten Blatt](/img/Antwortenblatt/A(10).png)
+![Antworten Blatt](/img/Antwortenblatt/A(11).png)
+![Antworten Blatt](/img/Antwortenblatt/A(12).png)
+![Antworten Blatt](/img/Antwortenblatt/A(13).png)
+![Antworten Blatt](/img/Antwortenblatt/A(14).png)
+![Antworten Blatt](/img/Antwortenblatt/A(15).png)
