@@ -20,6 +20,7 @@ hostname R1
 !
 !
 !
+enable secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1
 !
 !
 !
