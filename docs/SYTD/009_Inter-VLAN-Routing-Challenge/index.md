@@ -134,16 +134,17 @@ end
 
 ````sh
 version 15.0
-no service timestamps log datetime msec
-no service timestamps debug datetime msec
-no service password-encryption
+service timestamps log datetime msec
+service timestamps debug datetime msec
+service password-encryption
 !
 hostname S1
 !
 !
 !
-username admin secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
 !
+!
+username admin secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
 !
 !
 !
@@ -256,6 +257,8 @@ interface Vlan99
  ip address 172.17.99.10 255.255.255.0
 !
 ip default-gateway 172.17.99.1
+!
+no cdp run
 !
 banner motd ^C!Illegal hier zu sein!^^C
 !
